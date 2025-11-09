@@ -1,0 +1,459 @@
+.main {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: row;
+}
+.main-left {
+  width: 15rem;
+  height: 100%;
+  flex-shrink: 0;
+  z-index: 100;
+  overflow-x: auto;
+  word-break: break-word;
+  background-color: var(--menu-bg-color);
+  transition: all 0.2s;
+}
+.main-left .sidenav-header {
+  padding: 1.5rem 0.5rem;
+  text-align: center;
+}
+.main-left .sidenav-header .brand {
+  display: block;
+  margin: 0 2rem;
+  font-size: 1.8rem;
+  font-family: "TypoGraphica";
+  color: var(--primary);
+  text-decoration: none;
+  text-align: center;
+  cursor: default;
+}
+.main-left .sidenav-header .brand .logo {
+  max-width: 100%;
+  height: auto;
+}
+.main-left .nav {
+  margin-top: 0.5rem;
+}
+.main-left .nav > li > a:first-child {
+  display: block;
+  position: relative;
+  margin: 0.25rem 0.5rem;
+  padding: 0.675rem 0 0.675rem 2.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  cursor: default;
+  transition: all 0.3s ease;
+}
+.main-left .nav > li > a:first-child.active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary) 0%, #4c63d2 100%);
+}
+.main-left .nav > li > a:first-child.active::before {
+  color: #fff !important;
+}
+.main-left .nav > li > a:first-child.active::after {
+  transform: rotate(90deg);
+  color: #fff !important;
+}
+.main-left .nav > li > a:first-child:hover {
+  cursor: pointer;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary) 0%, #4c63d2 100%);
+  transform: translateX(4px);
+}
+.main-left .nav > li > a:first-child:hover::before {
+  color: #fff !important;
+}
+.main-left .nav > li > a:first-child::before {
+  position: absolute;
+  left: 0.8rem;
+  padding-top: 3px;
+  font-family: 'argon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e915";
+  color: var(--primary);
+  transition: all 0.3s;
+}
+.main-left .nav > .slide > .menu::before {
+  transition: transform 0.1s ease-in-out;
+}
+.main-left .nav > .slide > .menu.active::before {
+  transition: transform 0.2s ease-in-out;
+}
+.main-left .nav li {
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+}
+.main-left .nav li a {
+  display: block;
+  color: var(--menu-color);
+}
+.main-left .nav li.slide {
+  padding: 0;
+}
+.main-left .nav li.slide ul {
+  display: none;
+  overflow: hidden;
+}
+.main-left .nav li.slide:hover {
+  background: none;
+}
+.main-left .nav li.slide .slide-menu {
+  margin: 0 0.5rem 0 2.5rem;
+  padding: 0rem 0.5rem;
+}
+.main-left .nav li.slide .slide-menu.active {
+  display: block;
+}
+.main-left .nav li.slide .slide-menu li {
+  position: relative;
+  margin: 0;
+  border-radius: 0.5rem;
+  background: none;
+  list-style: none;
+}
+.main-left .nav li.slide .slide-menu li a {
+  padding: 0.5rem 0rem;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.main-left .nav li.slide .slide-menu li::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  content: "";
+  background-color: var(--primary);
+  transition: all 0.2s;
+}
+.main-left .nav li.slide .slide-menu li:hover {
+  background: none;
+}
+.main-left .nav li.slide .slide-menu li:hover::after {
+  width: 100%;
+}
+.main-left .nav li.slide .slide-menu .active {
+  background: none;
+  color: var(--menu-color);
+}
+.main-left .nav li.slide .slide-menu .active a {
+  color: var(--menu-color);
+}
+.main-left .nav li.slide .slide-menu .active::after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  content: "";
+  background-color: var(--primary);
+  transition: all 0.2s;
+}
+.main-left .nav li.slide .slide-menu .active:hover {
+  background: none;
+}
+.main-left .nav li.slide .slide-menu .active:hover::after {
+  width: 100%;
+}
+.main-left .nav li .menu {
+  display: block;
+  position: relative;
+  margin: 0.25rem 0.5rem;
+  padding: 0.675rem 0 0.675rem 2.5rem;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  cursor: default;
+  transition: all 0.3s ease;
+}
+.main-left .nav li .menu.active {
+  color: #fff;
+  background: var(--primary);
+}
+.main-left .nav li .menu.active::before {
+  color: #fff !important;
+}
+.main-left .nav li .menu.active::after {
+  transform: rotate(90deg);
+  color: #fff !important;
+}
+.main-left .nav li .menu:hover {
+  cursor: pointer;
+  color: #fff;
+  background: var(--primary);
+}
+.main-left .nav li .menu:hover::before {
+  color: #fff !important;
+}
+.main-left .nav li .menu::before {
+  position: absolute;
+  left: 0.8rem;
+  padding-top: 3px;
+  font-family: 'argon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\e915";
+  color: var(--primary);
+  transition: all 0.3s;
+}
+.main-left .nav li .menu::after {
+  position: absolute;
+  right: 0.5rem;
+  top: 0.8rem;
+  font-family: 'argon' !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: '\e90f';
+  color: #ced4da;
+  text-rendering: auto;
+  transition: all 0.3s;
+}
+.main-left .nav li .menu[data-title="Status"]:before {
+  content: "\e906";
+  color: var(--primary);
+}
+.main-left .nav li .menu[data-title="System"]:before {
+  content: "\e90a";
+  color: #fb6340;
+}
+.main-left .nav li .menu[data-title="Services"]:before {
+  content: "\e909";
+  color: #11cdef;
+}
+.main-left .nav li .menu[data-title="NAS"]:before {
+  content: "\e90c";
+  color: #f3a4b5;
+}
+.main-left .nav li .menu[data-title="VPN"]:before {
+  content: "\e90b";
+  color: #8965e0;
+}
+.main-left .nav li .menu[data-title="Network"]:before {
+  content: "\e908";
+  color: #8965e0;
+}
+.main-left .nav li .menu[data-title="Bandwidth_Monitor"]:before {
+  content: "\e90d";
+  color: #2dce89;
+}
+.main-left .nav li .menu[data-title="Docker"]:before {
+  content: "\e911";
+  color: #6699ff;
+}
+.main-left .nav li .menu[data-title="Statistics"]:before {
+  content: "\e913";
+  color: #8965e0;
+}
+.main-left .nav li .menu[data-title="Control"]:before {
+  content: "\e912";
+  color: var(--primary);
+}
+.main-left .nav li .menu[data-title="Asterisk"]:before {
+  content: "\e914";
+  color: #fb6340;
+}
+.main-left .nav li a[data-title="Log_out"]::before,
+.main-left .nav li .food[data-title="Log_out"]::before {
+  content: "\e907";
+  color: #adb5bd;
+}
+.main-left[style*="overflow: hidden"] > .nav > .slide > .menu::before {
+  display: none;
+}
+.main-left::-webkit-scrollbar {
+  width: 5px;
+  height: 1px;
+}
+.main-left::-webkit-scrollbar-thumb {
+  background-color: #f6f9fc;
+}
+.main-left::-webkit-scrollbar-track {
+  background-color: #fff;
+}
+.main-right {
+  height: 100%;
+  flex-grow: 1;
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.2s;
+}
+.main-right > #maincontent {
+  position: relative;
+  z-index: 50;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.main-right > #maincontent > .container {
+  margin: 0 1.25rem 1rem 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.main-right > #maincontent .Dashboard {
+  color: var(--gray-dark) !important;
+}
+.main-right > #maincontent .Dashboard h3 {
+  color: var(--gray-dark);
+}
+.main-right > #maincontent .Dashboard p {
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.main-right > #maincontent .Dashboard hr {
+  border-top: 1px solid #000000;
+}
+.main-right > #maincontent .Dashboard .dashboard-bg {
+  background-color: #fff;
+}
+.main-right > #maincontent .Dashboard .settings-info {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.main-right > #maincontent .Dashboard .settings-info p span:nth-child(2) {
+  max-height: 18.5px;
+  top: 4px;
+}
+.main-right > #maincontent .Dashboard .settings-info .label {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.6rem;
+}
+header {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  color: var(--header-color);
+}
+header.bg-primary {
+  background-color: var(--primary) !important;
+}
+header::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2rem;
+  background-color: transparent !important;
+}
+header .fill {
+  padding: 0.8rem 0;
+  display: flex;
+  border-bottom: 0px solid rgba(255, 255, 255, 0.08) !important;
+}
+header .fill .container {
+  width: 100%;
+  height: 2rem;
+  padding: 0 1.25rem;
+  display: flex;
+  align-items: center;
+}
+header .fill .container .flex1 {
+  flex: 1;
+}
+header .fill .container .flex1 .showSide {
+  display: none;
+  font-size: 1.4rem;
+  color: #fff;
+}
+header .fill .container .flex1 .showSide:hover {
+  text-decoration: none;
+}
+header .fill .container .flex1 .brand {
+  display: none;
+  padding-left: 1rem;
+  font-size: 1.5rem;
+  font-family: "TypoGraphica";
+  color: #fff;
+  text-decoration: none;
+  cursor: default;
+  vertical-align: text-bottom;
+}
+header .fill .container .pull-right {
+  margin-top: 0rem;
+  float: right;
+  display: flex;
+}
+header .fill .status span {
+  display: inline-block;
+  margin: 0 0.25rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.875rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+header .fill .status span:last-child {
+  margin-right: 0;
+}
+header .fill .status span[data-indicator="poll-status"] {
+  color: #fff;
+}
+header .fill .status span[data-style="active"] {
+  background-color: var(--green);
+}
+header .fill .status span[data-style="inactive"] {
+  color: #ffffff !important;
+  background-color: #32325d;
+}
+footer {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #aaa;
+  text-align: right;
+  white-space: nowrap;
+  overflow: hidden;
+}
+footer > a {
+  color: #aaa;
+  text-decoration: none;
+}
+#view {
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+#view > .spinning {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: #ffffff;
+}
+#view > div:first-child {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+}

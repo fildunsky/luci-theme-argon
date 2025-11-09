@@ -66,7 +66,7 @@ body {
             }
 
             .cbi-button-apply {
-                background-color: #483d8b !important;
+                background-color: #009966 !important;
                 background-color: var(--dark-primary) !important;
 
                 &:hover,
@@ -80,18 +80,34 @@ body {
 }
 
 header::after {
-    background-color: #1e1e1e !important;
+    background-color: transparent !important;
 }
 
 
 .main {
     .main-left {
-
-        background-color: #333333 !important;
-        box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, .15);
+        background: linear-gradient(180deg, #2d2d2d 0%, #1a1a1a 100%) !important;
+        border-right: 1px solid #444444 !important;
 
         .sidenav-header .brand {
-            color: #cccccc;
+            color: #cccccc !important;
+        }
+        
+        .nav > li > a {
+            color: #cccccc !important;
+            border-radius: 0.5rem !important;
+            margin: 0.25rem 0.5rem !important;
+            transition: all 0.3s ease !important;
+            
+            &:hover {
+                background: linear-gradient(135deg, var(--primary) 0%, #4c63d2 100%) !important;
+                color: #ffffff !important;
+            }
+            
+            &.active {
+                background: linear-gradient(135deg, var(--primary) 0%, #4c63d2 100%) !important;
+                color: #ffffff !important;
+            }
         }
 
         .nav {
@@ -127,7 +143,7 @@ header::after {
                 }
 
                 .menu.active {
-                    background-color: #483d8b !important;
+                    background-color: #009966 !important;
                     background-color: var(--dark-primary) !important;
                     color: #ffffff !important;
 
@@ -143,7 +159,7 @@ header::after {
                 }
 
                 a:hover {
-                    background-color: #483d8b !important;
+                    background-color: #009966 !important;
                     background-color: var(--dark-primary) !important;
                     color: #ffffff !important;
                 }
@@ -162,7 +178,272 @@ header::after {
     }
 
     .main-right {
-        background-color: #1e1e1e;
+        background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+    }
+}
+
+/* Enhanced Dark Mode Styles */
+.container {
+    background: transparent !important;
+    border: none !important;
+}
+
+#maincontent .container {
+    background: transparent !important;
+    border: none !important;
+}
+
+/* Dark Mode Form Controls */
+.cbi-input-text,
+.cbi-input-password,
+.cbi-input-select,
+.cbi-textarea,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="url"],
+textarea,
+select {
+    background-color: #2d2d2d !important;
+    border-color: #444444 !important;
+    color: #cccccc !important;
+    
+    &:focus {
+        background-color: #2d2d2d !important;
+        border-color: var(--primary) !important;
+        color: #cccccc !important;
+    }
+    
+    &:hover {
+        border-color: #666666 !important;
+    }
+    
+    &::placeholder {
+        color: #888888 !important;
+    }
+    
+    &:disabled,
+    &[readonly] {
+        background-color: #1a1a1a !important;
+        color: #666666 !important;
+    }
+}
+
+/* Dark Mode Checkboxes */
+input[type="checkbox"] {
+    background-color: #2d2d2d !important;
+    border-color: #444444 !important;
+    
+    &:checked {
+        background-color: var(--primary) !important;
+        border-color: var(--primary) !important;
+    }
+    
+    &:focus {
+        border-color: var(--primary) !important;
+    }
+}
+
+/* Dark Mode Cards and Sections */
+.cbi-section,
+.cbi-section-error,
+#iptables,
+.Firewall form,
+#cbi-network>.cbi-section-node,
+#cbi-wireless>.cbi-section-node,
+#cbi-wireless>#wifi_assoclist_table,
+[data-tab-title],
+[data-page^="admin-system-admin"]:not(.node-main-login) .cbi-map:not(#cbi-dropbear),
+[data-page="admin-system-opkg"] #maincontent>.container {
+    background-color: #2d2d2d !important;
+    border: 1px solid #444444 !important;
+    color: #cccccc !important;
+}
+
+/* Dark Mode Tables */
+table,
+.table {
+    background-color: #2d2d2d !important;
+    color: #cccccc !important;
+    
+    th,
+    .th {
+        background-color: #1a1a1a !important;
+        color: #cccccc !important;
+        border-bottom-color: #444444 !important;
+    }
+    
+    td,
+    .td {
+        color: #cccccc !important;
+        border-bottom-color: #444444 !important;
+    }
+    
+    tbody tr:hover {
+        background-color: rgba(94, 114, 228, 0.1) !important;
+    }
+}
+
+/* Dark Mode Breadcrumbs */
+.breadcrumb {
+    background: rgba(45, 45, 45, 0.9) !important;
+    border: 1px solid #444444 !important;
+    color: #cccccc !important;
+    
+    a {
+        color: var(--primary) !important;
+        
+        &:hover {
+            color: #ffffff !important;
+        }
+    }
+}
+
+/* Dark Mode Footer */
+footer {
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(45, 45, 45, 0.8) 100%) !important;
+    border-top-color: #444444 !important;
+    color: #cccccc !important;
+}
+
+/* Dark Mode Primary Buttons with Purple Shadows */
+.btn.primary,
+.cbi-page-actions .cbi-button-save,
+.cbi-page-actions .cbi-button-apply+.cbi-button-save,
+.cbi-button-add,
+.cbi-button-save,
+.cbi-button-positive,
+.cbi-button-link,
+.cbi-button[value="Enable"],
+.cbi-button[value="Scan"],
+.cbi-button[value^="Back"],
+.cbi-button-neutral[onclick="handleConfig(event)"] {
+    
+    &:hover {
+    }
+    
+    &:active {
+    }
+}
+
+/* Dark Mode Secondary Buttons with Blue Shadows */
+.cbi-page-actions .cbi-button-apply,
+.cbi-section-actions .cbi-button-edit,
+.cbi-button-edit,
+.cbi-button-apply,
+.cbi-button-reload,
+.cbi-button-action,
+.cbi-button[value="Submit"],
+.cbi-button[value="Upload"],
+.cbi-button[value$="Apply"],
+.cbi-button[onclick="addKey(event)"] {
+    
+    &:hover {
+    }
+    
+    &:active {
+    }
+}
+
+/* Dark Mode Danger Buttons with Red Shadows */
+.btn.danger,
+.cbi-section-remove>.cbi-button,
+.cbi-button-remove,
+.cbi-button-reset,
+.cbi-button-negative,
+.cbi-button[value="Stop"],
+.cbi-button[value="Kill"],
+.cbi-button[onclick="reboot(this)"],
+.cbi-button-neutral[value="Restart"] {
+    
+    &:hover {
+    }
+    
+    &:active {
+    }
+}
+
+/* Dark Mode Warning Buttons with Orange Shadows */
+.btn[value="Dismiss"],
+.cbi-button[value="Terminate"],
+.cbi-button[value="Reset"],
+.cbi-button[value="Disabled"],
+.cbi-button[onclick^="iface_reconnect"],
+.cbi-button[onclick="handleReset(event)"],
+.cbi-button-neutral[value="Disable"] {
+    
+    &:hover {
+    }
+    
+    &:active {
+    }
+}
+
+/* Dark Mode Success Buttons with Green Shadows */
+.cbi-button-success,
+.cbi-button-download {
+    
+    &:hover {
+    }
+    
+    &:active {
+    }
+}
+
+/* Dark Mode Labels */
+label,
+.cbi-value-title {
+    color: #cccccc !important;
+}
+
+/* Dark Mode Tabs */
+.tabs {
+    background-color: #2d2d2d !important;
+    border: 1px solid #444444 !important;
+    
+    li {
+        color: #cccccc !important;
+        
+        a {
+            color: #cccccc !important;
+        }
+        
+        &.active,
+        &:hover {
+            background-color: rgba(94, 114, 228, 0.2) !important;
+            color: var(--primary) !important;
+            
+            a {
+                color: var(--primary) !important;
+            }
+        }
+    }
+}
+
+/* Dark Mode Header */
+header.bg-primary {
+    background: linear-gradient(135deg, var(--primary) 0%, #4c63d2 100%) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    
+    .brand {
+        color: #ffffff !important;
+        text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3) !important;
+    }
+}
+
+/* Dark Mode Alert Messages */
+.alert-message.error {
+    background: var(--danger) !important;
+    color: #fff !important;
+    border: 1px solid var(--danger) !important;
+    
+    h4 {
+        color: #fff !important;
+    }
+    
+    p {
+        color: #fff !important;
     }
 }
 
@@ -202,9 +483,9 @@ input:-webkit-autofill {
 .cbi-button-apply,
 .cbi-button-edit {
     color: #fff !important;
-    background-color: #483d8b !important;
+    background-color: #009966 !important;
     background-color: var(--dark-primary) !important;
-    border-color: #483d8b !important;
+    border-color: #009966 !important;
     border-color: var(--dark-primary) !important;
 }
 
@@ -223,7 +504,6 @@ header.bg-primary {
 
 .cbi-section {
     background: none;
-    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, .35)
 }
 
 .panel-title {
@@ -343,7 +623,7 @@ h4 {
 
 .cbi-button {
     color: #ffffff !important;
-    background-color: #483d8b;
+    background-color: #009966;
     background-color: var(--dark-primary);
 }
 
@@ -352,7 +632,7 @@ h4 {
 }
 
 abbr {
-    color: #5e72e4;
+    color: #009966;
 }
 
 div > table > tbody > tr:nth-of-type(2n),
@@ -361,7 +641,6 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
 }
 
 #content_syslog {
-    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, .35)
 }
 
 #syslog {
@@ -373,7 +652,6 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
 #iwsvg2,
 #bwsvg {
     overflow: hidden;
-    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, .35);
     background-color: #1e1e1e !important;
 }
 
@@ -397,7 +675,7 @@ div > .table > .tbody > .tr:nth-of-type(2n) {
 
 .tabs > li[class~="active"],
 .tabs > li:hover {
-    border-bottom: 0.18751rem solid #483d8b;
+    border-bottom: 0.18751rem solid #009966;
     border-bottom: 0.18751rem solid var(--dark-primary);
     color: var(--dark-primary) !important;
     background-color: #181819;
@@ -450,7 +728,7 @@ input {
 
 select:not([multiple="multiple"]):focus,
 input:focus {
-    border-color: #483d8b !important;
+    border-color: #009966 !important;
     border-color: var(--dark-primary) !important;
     outline: 0;
 
@@ -459,7 +737,7 @@ input:focus {
 select:not([multiple="multiple"]):focus,
 input:not(.cbi-button):focus,
 .cbi-dropdown:focus {
-    border-color: #5e72e4;
+    border-color: #009966;
     border-color: var(--dark-primary) !important;
 }
 
@@ -546,7 +824,7 @@ textarea {
 
 div.cbi-value var,
 td.cbi-value-field var {
-    color: #5e72e4;
+    color: #009966;
 }
 
 #diag-rc-output > pre {
@@ -556,7 +834,6 @@ td.cbi-value-field var {
 
 .node-services-vssr .block {
     background-color: #3c3c3c !important;
-    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, .35);
 }
 
 .node-services-vssr .block h4 {
@@ -565,18 +842,16 @@ td.cbi-value-field var {
 
 .node-services-vssr .status-bar {
     color: #ccc;
-    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, .35);
     background-color: #1e1e1e;
 }
 
 .node-services-vssr .cbi-section-table-row {
     color: #ccc;
     background-color: #3c3c3c !important;
-    box-shadow: 0 0 5px 0 rgba(0, 0, 0, .35)
 }
 
 .node-services-vssr .cbi-section-table-row.fast {
-    background: #483d8b !important;
+    background: #009966 !important;
     background: var(--dark-primary) !important;
     color: #fff;
 }
@@ -591,13 +866,28 @@ td.cbi-value-field var {
 }
 
 #xhr_poll_status > .label.success {
-    color: #ccc !important;
+    color: #fff !important;
+    background-color: transparent !important;
+}
 
-    background-color: darkolivegreen !important;
+#xhr_poll_status .label {
+    color: #fff !important;
+}
+
+span[data-indicator="poll-status"] {
+    color: #fff !important;
+}
+
+header .fill .status span[data-indicator="poll-status"] {
+    color: #fff !important;
+}
+
+header .fill .status span[data-indicator="poll-status"][data-style="active"] {
+    color: #fff !important;
 }
 
 .notice {
-    background-color: #483d8b !important;
+    background-color: #009966 !important;
     background-color: var(--dark-primary) !important;
 }
 
@@ -609,9 +899,10 @@ td.cbi-value-field var {
 .cbi-input-reload,
 .cbi-button-reload {
     color: #fff !important;
-    background: darkolivegreen !important;
-    border-color: darkolivegreen !important;
+    background: var(--info) !important;
+    border-color: var(--info) !important;
 }
+
 
 .cbi-button-reset,
 .cbi-input-remove {
@@ -626,7 +917,7 @@ td.cbi-value-field var {
 .cbi-button-apply.important,
 .cbi-button-reload.important,
 .cbi-button-action.important {
-    border: 1px #483d8b solid !important;
+    border: 1px #009966 solid !important;
     border: 1px var(--dark-primary) solid !important;
 }
 
@@ -657,7 +948,6 @@ fieldset[id^="cbi-apply-"] {
 
 header .fill .status span[data-style="active"] {
     color: #ccc !important;
-    background-color: darkolivegreen !important;
 }
 
 #cbi-wireless .td,
@@ -680,7 +970,7 @@ header .fill .status span[data-style="active"] {
 td > .ifacebadge,
 .td > .ifacebadge {
     color: #fff;
-    background-color: #483d8b;
+    background-color: #009966;
     background-color: var(--dark-primary);
     border: 0;
 }
@@ -694,12 +984,14 @@ td > .ifacebadge,
 }
 
 .alert.error, .alert-message.error {
-    background-color: #784f00;
+    background: var(--danger) !important;
+    color: #fff !important;
+    border: 1px solid var(--danger) !important;
 }
 
 .alert h4, .alert-message h4 {
-    background-color: #784f00;
-    color: #ffbf00;
+    background: transparent !important;
+    color: #fff !important;
 }
 
 .alert-message [class="btn"] {
@@ -716,7 +1008,6 @@ td > .ifacebadge,
 
                 > ins {
                     border-color: #00ad00;
-                    background-color: #688668;
                 }
 
                 > del {
@@ -729,7 +1020,6 @@ td > .ifacebadge,
                     border-color: #666;
 
                     ins {
-                        background-color: #688668;
                     }
 
                     del {
@@ -749,13 +1039,11 @@ td > .ifacebadge,
                 }
 
                 ins {
-                    background-color: #688668;
                 }
             }
 
             > ins {
                 border-color: #00ad00;
-                background-color: #688668;
             }
 
             > del {
@@ -800,7 +1088,6 @@ td > .ifacebadge,
 [data-page^="admin-system-admin"]:not(.node-main-login) .cbi-map:not(#cbi-dropbear),
 [data-page="admin-system-opkg"] #maincontent > .container {
     background: #1e1e1e !important;
-    box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, 0.35);
 }
 
 div[style="width:100%;height:300px;border:1px solid #000;background:#fff"] {
@@ -839,7 +1126,7 @@ div[style="width:100%;height:300px;border:1px solid #000;background:#fff"] {
 }
 
 .cbi-value input[type="password"] + .cbi-button-neutral {
-    background-color: #483d8b !important;
+    background-color: #009966 !important;
     background-color: var(--dark-primary) !important;
     border-color: var(--dark-primary) !important;
 }
@@ -867,7 +1154,6 @@ input,
 
 .cbi-button-positive {
     color: #fff !important;
-    background-color: darkolivegreen !important;
 }
 
 [data-page="admin-system-flash"] legend {
@@ -879,7 +1165,7 @@ input,
 }
 
 .cbi-dropdown[open] {
-    border-color: #483d8b !important;
+    border-color: #009966 !important;
     border-color: var(--dark-primary) !important;
 }
 
@@ -898,13 +1184,13 @@ input,
 }
 
 .cbi-dropdown[open] > ul.dropdown > li[selected] {
-    background-color: #483d8b !important;
+    background-color: #009966 !important;
     background-color: var(--dark-primary) !important;
     border-bottom: 1px solid #3c3c3c !important;
 }
 
 .cbi-dropdown[open] > ul.dropdown > li.focus {
-    background: #483d8b;
+    background: #009966;
     background: var(--dark-primary);
     outline: none;
 }
@@ -927,10 +1213,10 @@ input,
 .cbi-button[value="Upload"],
 .cbi-button[value$="Apply"],
 .cbi-button[onclick="addKey(event)"] {
-    background: #483d8b !important;
-    background: var(--dark-primary) !important;
-    border-color: var(--dark-primary) !important;
+    background: #009966 !important;
+    border-color: #009966 !important;
 }
+
 
 .btn.primary,
 .cbi-page-actions .cbi-button-save,
@@ -943,7 +1229,7 @@ input,
 .cbi-button[value="Scan"],
 .cbi-button[value^="Back"],
 .cbi-button-neutral[onclick="handleConfig(event)"] {
-    background: #483d8b;
+    background: #009966;
     background: var(--dark-primary);
 }
 
@@ -969,7 +1255,6 @@ input,
 
 #view > .spinning {
     background: #333333 !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03) !important;
 }
 
 @media screen and (min-width: 600px) {
@@ -991,7 +1276,6 @@ input,
 @media screen and (max-width: 480px) {
     .node-status-iptables > .main div > .cbi-map > form {
         background-color: #1e1e1e;
-        box-shadow: 0 0 0.5rem 0 rgba(0, 0, 0, .35);
     }
 
 
@@ -1099,7 +1383,7 @@ input,
 
     textarea {
         background: transparent;
-        border-radius: 0.25rem;
+        border-radius: 0.5rem;
         color: #ccc;
         border: 1px solid #3c3c3c !important;
     }
@@ -1203,11 +1487,6 @@ input,
     .commandbox {
         border-bottom: thin solid #333;
         background: #252526;
-        box-shadow: inset 0 1px 0 rgba(0,0,0,0.2),0 1px 2px rgba(255,255,255,0.05);
     }
 }
 
-.btn {
-    background-color: rgb(112, 112, 112);
-    color: #fff;
-}
